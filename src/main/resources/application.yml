@@ -1,0 +1,131 @@
+
+server:
+  port: 6755
+  servlet:
+    # 应用的访问路径
+    context-path: /
+
+spring:
+  application:
+    name: springinitializr
+  main:
+    allow-bean-definition-overriding: true
+    # 资源信息
+    messages:
+      # 国际化资源文件路径
+      basename: i18n/messages
+      encoding: utf-8
+    profiles:
+      active: dev
+
+  #datasource:
+  #  type: com.alibaba.druid.pool.DruidDataSource
+  #  driverClassName: com.mysql.cj.jdbc.Driver
+  #  druid:
+  #    # 主库数据源
+  #    url: jdbc:mysql://rm-wz9b939t933rwvxd7.mysql.rds.aliyuncs.com:3306/zzparking_charging?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
+  #    username: zhongzhiiov
+  #    password: ZZparking@iov2021
+  #    # 初始连接数
+  #    initialSize: 5
+  #    # 最小连接池数量
+  #    minIdle: 10
+  #    # 最大连接池数量
+  #    maxActive: 20
+  #    # 配置获取连接等待超时的时间
+  #    maxWait: 60000
+  #    # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+  #    timeBetweenEvictionRunsMillis: 60000
+  #    # 配置一个连接在池中最小生存的时间，单位是毫秒
+  #    minEvictableIdleTimeMillis: 300000
+  #    # 配置一个连接在池中最大生存的时间，单位是毫秒
+  #    maxEvictableIdleTimeMillis: 900000
+  #    # 配置检测连接是否有效
+  #    validationQuery: SELECT 1 FROM DUAL
+  #    testWhileIdle: true
+  #    testOnBorrow: false
+  #    testOnReturn: false
+  #    webStatFilter:
+  #      enabled: true
+  #    statViewServlet:
+  #      enabled: true
+  #      # 设置白名单，不填则允许所有访问
+  #      allow:
+  #      url-pattern: /druid/*
+  #      # 控制台管理用户名和密码
+  #      login-username: zhongzhiiov
+  #      login-password: 123456
+  #    filter:
+  #      stat:
+  #        enabled: true
+  #        # 慢SQL记录
+  #        log-slow-sql: true
+  #        slow-sql-millis: 1000
+  #        merge-sql: true
+  #      wall:
+  #        config:
+  #          multi-statement-allow: true
+  #  redis:
+  #    host: r-wz9jvpwu5p5e01mexb.redis.rds.aliyuncs.com
+  #    port: 6379
+  #    database: 0
+  #    password: ZZparking@redis2021
+
+#mybatis-plus:
+#  mapper-locations: classpath*:com/zhongzhiiov/zzparking/**/*.xml
+#  #实体扫描，多个package用逗号或者分号分隔
+#  type-aliases-package: com.zhongzhiiov.zzparking.**.domain
+#  #typeEnumsPackage: com.baomidou.springboot.entity.enums
+#  configuration:
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+# 日志配置
+logging:
+  level:
+    org.springframework: warn
+    com.example: info
+    com.example.mapper: info
+
+swagger:
+  enabled: true
+  pathMapping: /dev-api
+
+
+# PageHelper分页插件
+pagehelper:
+  helperDialect: mysql
+  supportMethodsArguments: true
+  params: count=countSql
+
+# 防止XSS攻击
+xss:
+  # 过滤开关
+  enabled: true
+  # 排除链接（多个用逗号分隔）
+  excludes: /system/notice
+  # 匹配链接
+  urlPatterns: /system/*,/monitor/*,/tool/*
+
+prop:
+  accessKeyId: xxxx
+  accessKeySecret: xxxx
+
+  cronPin: 0/1 * * * * ?
+
+  #cronSMS: 0/30 * * * * ?      #30s
+  #cronSMS: 0 0 * * * ?          #1h
+  cronSMS: 0 0 8-23 * * ?      #1h, 8:00~23:00
+  #cronSMS: 0 0/30 * * * ?      #30m
+  #cronSMS: 0 30 8-23 * * ?   #30m, 8:00~23:00
+
+  phones:
+    - 13669029768   #Test
+
+  contents:
+    - abvds1
+    - abvds2
+    - abvds3
+    - abvds4
+    - abvds5
+    - abvds6
+
