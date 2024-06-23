@@ -28,18 +28,144 @@
     </scm>
     <properties>
         <java.version>8</java.version>
+
+        <aliyunsdk.oss.version>3.12.0</aliyunsdk.oss.version>
+        <aliyunsdk.oss.version>3.12.0</aliyunsdk.oss.version>
+        <locationtech.jts.version>1.19.0</locationtech.jts.version>
+        <hsr.geohash.version>1.4.0</hsr.geohash.version>
+        <swagger.version>2.9.2</swagger.version>
+        <swagger.models.version>1.6.11</swagger.models.version>
+        <swagger.bootstrap-ui.version>1.9.6</swagger.bootstrap-ui.version>
+        <knife4j-spring-boot-starter.version>2.0.5</knife4j-spring-boot-starter.version>
+        <easyexcel.version>3.0.5</easyexcel.version>
+        <zxing.javase.version>3.5.0</zxing.javase.version>
+        <hutool.version>5.8.12</hutool.version>
+        <netty.version>4.1.94.Final</netty.version>
     </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${swagger.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>io.swagger</groupId>
+                        <artifactId>swagger-models</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>io.swagger</groupId>
+                <artifactId>swagger-models</artifactId>
+                <version>${swagger.models.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-core</artifactId>
+                <version>${hutool.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.netty</groupId>
+                <artifactId>netty-all</artifactId>
+                <version>${netty.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>swagger-bootstrap-ui</artifactId>
+                <version>${swagger.bootstrap-ui.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>knife4j-spring-boot-starter</artifactId>
+                <version>${knife4j-spring-boot-starter.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.aliyun.oss</groupId>
+                <artifactId>aliyun-sdk-oss</artifactId>
+                <version>${aliyunsdk.oss.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.locationtech.jts</groupId>
+                <artifactId>jts-core</artifactId>
+                <version>${locationtech.jts.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>ch.hsr</groupId>
+                <artifactId>geohash</artifactId>
+                <version>${hsr.geohash.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>easyexcel</artifactId>
+                <version>${easyexcel.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.zxing</groupId>
+                <artifactId>core</artifactId>
+                <version>${zxing.javase.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.zxing</groupId>
+                <artifactId>javase</artifactId>
+                <version>${zxing.javase.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
         </dependency>
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+
+
+
+        <!--<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>-->
+
+        <!--<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>-->
+
+        <!--<dependency>
+            <groupId>com.github.xiaoymin</groupId>
+            &lt;!&ndash;<artifactId>swagger-bootstrap-ui</artifactId>&ndash;&gt;
+            <artifactId>knife4j-spring-boot-starter</artifactId>
+        </dependency>-->
+
+        <!--<dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            &lt;!&ndash;<artifactId>jackson-core</artifactId>&ndash;&gt;
+            <artifactId>jackson-databind</artifactId>
+            <version>2.13.3</version>
+        </dependency>-->
+
+        <!--<dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>-->
+
+        <!-- aliyun短信 -->
+        <!--<dependency>
+            <groupId>com.aliyun</groupId>
+            <artifactId>dysmsapi20170525</artifactId>
+            <version>2.0.22</version>
+        </dependency>
+        <dependency>
+            <groupId>com.aliyun</groupId>
+            <artifactId>alibabacloud-dysmsapi20170525</artifactId>
+            <version>1.0.1</version>
+        </dependency>-->
     </dependencies>
 
     <build>
