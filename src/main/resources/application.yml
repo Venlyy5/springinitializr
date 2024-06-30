@@ -1,6 +1,6 @@
 
 server:
-  port: 6755
+  port: 9999
   servlet:
     # 应用的访问路径
     context-path: /
